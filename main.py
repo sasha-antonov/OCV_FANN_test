@@ -1,3 +1,4 @@
+# coding=utf-8
 __author__ = 'sasha'
 
 import cv
@@ -15,6 +16,10 @@ cv.NamedWindow("bin", cv.CV_WINDOW_AUTOSIZE)
 cv.CvtColor(img, gray, cv.CV_RGB2GRAY)
 cv.Not(gray, gray)
 cv.Threshold(gray, binary, 20, 255, cv.CV_THRESH_BINARY)
+
+"""" находим все белые связанные поля и
+     заливаем разными цветами
+"""""
 
 cv.FloodFill(binary, (0,10), 100, cv.ScalarAll(10), cv.ScalarAll(10), 0, dst)
 
